@@ -6,7 +6,7 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/22 17:28:34 by tjinichi          #+#    #+#             */
-/*   Updated: 2020/07/19 02:24:06 by tjinichi         ###   ########.fr       */
+/*   Updated: 2020/11/07 22:40:33 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 	unsigned char	*dst_p;
 	unsigned char	*src_p;
 
+	if (!dst || !src)
+		return (NULL);
 	dst_p = (unsigned char*)dst;
 	src_p = (unsigned char*)src;
 	while (n > 0)

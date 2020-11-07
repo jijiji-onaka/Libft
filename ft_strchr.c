@@ -6,7 +6,7 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/22 23:04:25 by tjinichi          #+#    #+#             */
-/*   Updated: 2020/07/07 23:39:36 by tjinichi         ###   ########.fr       */
+/*   Updated: 2020/11/07 22:36:10 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,18 @@
 
 char	*ft_strchr(const char *s, int c)
 {
+	char	*s_tmp;
+
 	if (!s)
 		return (NULL);
-	while (*s)
+	s_tmp = (char *)s;
+	while (*s_tmp)
 	{
-		if (*s == c)
-			return ((char*)s);
-		s++;
+		if (*s_tmp == c)
+			return (s_tmp);
+		s_tmp++;
 	}
-	if (*s == '\0' && c == '\0')
-		return ((char*)s);
+	if (*s_tmp == '\0' && c == '\0')
+		return (s_tmp);
 	return (NULL);
 }

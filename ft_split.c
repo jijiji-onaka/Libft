@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tjinichi <tjinichi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/23 11:43:10 by tjinichi          #+#    #+#             */
-/*   Updated: 2020/10/16 17:55:12 by tjinichi         ###   ########.fr       */
+/*   Updated: 2020/11/07 22:38:16 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ static char		**insert_word(char const *s, char c, int wc, char **res)
 		while (*s == c)
 			s++;
 		len = word_length(s, c);
-		if (!(res[i] = (char*)malloc(sizeof(char) * (len + 1))))
+		if (!(res[i] = malloc(sizeof(char) * (len + 1))))
 			return (array_free_2d(&res, i));
 		j = 0;
 		while (j < len)
@@ -74,8 +74,10 @@ char			**ft_split(char const *s, char c)
 	char	**res;
 	int		wc;
 
+	if (!s)
+		return (NULL);
 	wc = word_count(s, c);
-	if (!(res = (char **)malloc(sizeof(char *) * (wc + 1))))
+	if (!(res = malloc(sizeof(char *) * (wc + 1))))
 		return (NULL);
 	res = insert_word(s, c, wc, res);
 	return (res);

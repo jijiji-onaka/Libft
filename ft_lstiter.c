@@ -6,7 +6,7 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/23 17:39:00 by tjinichi          #+#    #+#             */
-/*   Updated: 2020/07/01 17:33:39 by tjinichi         ###   ########.fr       */
+/*   Updated: 2020/11/07 22:52:01 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	if (!f)
+	if (!f || !lst)
 		return ;
 	while (lst)
 	{
