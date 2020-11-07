@@ -20,7 +20,7 @@ Please write `#include "libft.h` in the file you want to use,
 
 Compile with `gcc libft.a required file`.
 
-```c
+```
 #include "libft.h"
 
 int main()
