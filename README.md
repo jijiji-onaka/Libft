@@ -28,3 +28,8 @@ int main()
 
 }
 ```
+
+## other
+ここが間違ってるとかこうした方が良い等あれば是非教えてください！
+
+If there's anything I'm doing wrong or this is better, please let me know!
