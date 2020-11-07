@@ -6,7 +6,7 @@
 #    By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/06/23 20:15:31 by tjinichi          #+#    #+#              #
-#    Updated: 2020/11/05 20:11:09 by tjinichi         ###   ########.fr        #
+#    Updated: 2020/11/07 22:26:18 by tjinichi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -63,7 +63,7 @@ SRCS =	ft_atoi.c \
 		create_file_name.c \
 		ft_stov.c \
 		ft_strcmp.c \
-		ft_strjoin_num.c \
+		joint_number.c \
 		file_tail_number.c
 
 

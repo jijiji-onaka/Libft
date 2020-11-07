@@ -6,7 +6,7 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/22 22:06:26 by tjinichi          #+#    #+#             */
-/*   Updated: 2020/07/15 17:12:33 by tjinichi         ###   ########.fr       */
+/*   Updated: 2020/11/07 22:17:19 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ size_t	ft_strlen(const char *str)
 	size_t i;
 
 	if (!str)
-		return (0);
+		return (INT_MIN);
 	i = 0;
 	while (str[i] != '\0')
 	{

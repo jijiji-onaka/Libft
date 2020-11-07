@@ -6,7 +6,7 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/22 23:24:47 by tjinichi          #+#    #+#             */
-/*   Updated: 2020/07/08 12:50:15 by tjinichi         ###   ########.fr       */
+/*   Updated: 2020/11/07 22:30:14 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,9 @@ char	*ft_strdup(const char *s1)
 
 	if (s1 == NULL)
 		return (ft_strdup(""));
-	len = ft_strlen(s1);
-	if (!(res = malloc(sizeof(char) * (len + 1))))
+	len = ft_strlen(s1) + 1;
+	if (!(res = malloc(sizeof(char) * (len))))
 		return (NULL);
 	ft_memcpy(res, s1, len);
-	res[len] = '\0';
 	return (res);
 }

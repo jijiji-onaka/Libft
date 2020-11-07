@@ -1,16 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin_num.c                                   :+:      :+:    :+:   */
+/*   joint_number.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/26 04:02:54 by tjinichi          #+#    #+#             */
-/*   Updated: 2020/10/26 04:03:33 by tjinichi         ###   ########.fr       */
+/*   Updated: 2020/11/07 22:28:36 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/*
+** this function puts a number after a string
+** and doesn't take into account the minus.
+*/
 
 char			*joint_number(char *s, long long num)
 {
