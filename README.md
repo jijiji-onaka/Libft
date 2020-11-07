@@ -4,7 +4,7 @@
 This is my own library that I created as part of the 42Tokyo project.
 
 ## Installation
-> `git clone git@github.com:jijiji-onaka/Libft.git && cd Libft && make`
+> ```git clone git@github.com:jijiji-onaka/Libft.git && cd Libft && make```
 
 これで`libft.a`という静的ライブラリが出来ます。
 
@@ -18,7 +18,7 @@ This creates a static library called `libft.a`.
 
 Please write `#include "libft.h` in the file you want to use,
 
-Compile with `gcc libft.a required file`.
+Compile with `gcc libft.a "required files"`.
 
 ```
 #include "libft.h"
