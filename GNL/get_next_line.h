@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/06/29 14:47:14 by tjinichi          #+#    #+#             */
-/*   Updated: 2020/11/05 20:10:49 by tjinichi         ###   ########.fr       */
+/*   Created: 2020/10/18 23:15:50 by sehattor          #+#    #+#             */
+/*   Updated: 2020/11/11 17:41:31 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,22 @@
 # include <fcntl.h>
 # include <sys/types.h>
 # include <sys/stat.h>
-# define FD_MAX 256
-# define BUFFER_SIZE 1024
+# include "../libft.h"
+# define NO_RETURN 2
+# define R_NL 1
+# define R_EOF 0
+# define R_ERR -1
 
+typedef struct	s_gnl
+{
+	int				fd;
+	char			*store;
+	struct s_gnl	*next;
+}				t_gnl;
+
+t_gnl			*gnl_lstnew(char *content, int fd);
+void			gnl_lstadd_front(t_gnl **lst, t_gnl *new);
+t_gnl			*recognize_fd(int fd, t_gnl **lst);
 int				get_next_line(int fd, char **line);
 
 #endif
