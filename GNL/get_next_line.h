@@ -6,7 +6,7 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/18 23:15:50 by sehattor          #+#    #+#             */
-/*   Updated: 2020/11/11 17:41:31 by tjinichi         ###   ########.fr       */
+/*   Updated: 2020/11/11 17:47:22 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@
 # define R_NL 1
 # define R_EOF 0
 # define R_ERR -1
+# define BUFFER_SIZE 1024
 
 typedef struct	s_gnl
 {
