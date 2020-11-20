@@ -6,7 +6,7 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/16 18:40:42 by tjinichi          #+#    #+#             */
-/*   Updated: 2020/11/03 00:23:38 by tjinichi         ###   ########.fr       */
+/*   Updated: 2020/11/20 15:30:30 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@
 */
 
 # include <math.h>
-# include "../libft.h"
 
 typedef struct	s_p3
 {
