@@ -6,7 +6,7 @@
 #    By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/06/23 20:15:31 by tjinichi          #+#    #+#              #
-#    Updated: 2020/11/20 15:32:25 by tjinichi         ###   ########.fr        #
+#    Updated: 2020/11/22 19:04:38 by tjinichi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -56,6 +56,7 @@ SRCS =	srcs/ft_atoi.c \
 		srcs/ft_stoi.c \
 		srcs/ft_stod.c \
 		srcs/GNL/get_next_line.c \
+		srcs/GNL/get_next_line_utils.c \
 		srcs/ft_check_file_tail.c \
 		srcs/count_2d.c \
 		srcs/array_free_2d.c \
