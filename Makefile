@@ -6,7 +6,7 @@
 #    By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/06/23 20:15:31 by tjinichi          #+#    #+#              #
-#    Updated: 2020/11/22 19:04:38 by tjinichi         ###   ########.fr        #
+#    Updated: 2020/11/26 17:08:28 by tjinichi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,6 +41,7 @@ SRCS =	srcs/ft_atoi.c \
 		srcs/ft_strchr.c \
 		srcs/ft_strdup.c \
 		srcs/ft_strjoin.c \
+		srcs/ft_strjoinch.c \
 		srcs/ft_strlcat.c \
 		srcs/ft_strlcpy.c \
 		srcs/ft_strlen.c \
