@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   array_free_2d.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tjinichi <tjinichi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/16 17:51:36 by tjinichi          #+#    #+#             */
-/*   Updated: 2020/10/16 17:54:53 by tjinichi         ###   ########.fr       */
+/*   Updated: 2020/11/30 21:41:20 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void		*array_free_2d(char ***res, int cur)
+void		*array_free_2d(void ***res, int cur)
 {
 	int		i;
 

@@ -6,7 +6,7 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/22 15:23:39 by tjinichi          #+#    #+#             */
-/*   Updated: 2020/11/26 17:08:11 by tjinichi         ###   ########.fr       */
+/*   Updated: 2020/11/30 21:41:16 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ char			**ft_split(char const *s, char c);
 char			*ft_itoa(int n);
 char			*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 int				count_2d(char **ss);
-void			*array_free_2d(char ***res, int cur);
+void			*array_free_2d(void ***res, int cur);
 long long		ft_numlen(long long n);
 int				check_file_tail(char *s, char *tail);
 char			*create_file_name(char *directory, char *file, char *extension);
