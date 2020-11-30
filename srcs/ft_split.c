@@ -6,7 +6,7 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/23 11:43:10 by tjinichi          #+#    #+#             */
-/*   Updated: 2020/11/07 22:38:16 by tjinichi         ###   ########.fr       */
+/*   Updated: 2020/11/30 22:16:34 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ static char		**insert_word(char const *s, char c, int wc, char **res)
 			s++;
 		len = word_length(s, c);
 		if (!(res[i] = malloc(sizeof(char) * (len + 1))))
-			return (array_free_2d(&res, i));
+			return (array_free_2d((void***)&res, i));
 		j = 0;
 		while (j < len)
 		{
