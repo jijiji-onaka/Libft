@@ -1,36 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stov.c                                          :+:      :+:    :+:   */
+/*   ft_strsort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/16 18:46:08 by tjinichi          #+#    #+#             */
-/*   Updated: 2020/11/30 22:51:50 by tjinichi         ###   ########.fr       */
+/*   Created: 2020/11/30 23:34:18 by tjinichi          #+#    #+#             */
+/*   Updated: 2020/11/30 23:35:32 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_stov(char *s, t_p3 *p)
+void	ft_strsort(char **str)
 {
-	char	**a;
-	int		ret;
+	int		i;
+	int		j;
+	int		str_num;
 
-	if (!(a = ft_split(s, ',')))
-		return (0);
-	ret = 0;
-	if (count_2d(a) != 3)
+	i = 0;
+	str_num = count_2d(str);
+	while (i < str_num - 1)
 	{
-		array_free_2d((void***)&a, count_2d(a));
-		return (0);
+		j = i + 1;
+		while (j < str_num)
+		{
+			if (ft_strcmp(str[i], str[j]) > 0)
+				ft_swap((void**)&(str[i]), (void**)&(str[j]));
+			j++;
+		}
+		i++;
 	}
-	if (!ft_stod(a[0], &(p->x)) ||
-		!ft_stod(a[1], &(p->y)) ||
-		!ft_stod(a[2], &(p->z)))
-		ret = 1;
-	array_free_2d((void***)&a, count_2d(a));
-	if (ret == 1)
-		return (0);
-	return (1);
 }

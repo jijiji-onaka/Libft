@@ -6,7 +6,7 @@
 #    By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/10/23 15:04:22 by tjinichi          #+#    #+#              #
-#    Updated: 2020/11/20 15:30:03 by tjinichi         ###   ########.fr        #
+#    Updated: 2020/11/30 22:20:13 by tjinichi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,16 +31,19 @@ SRCS =	add_vec.c \
 
 OBJS = ${SRCS:.c=.o}
 
+%.o: %.c
+	@$(CC) $(CFLAGS) -c -o $@ $<
+
 $(NAME): $(OBJS)
-	ar rcs $(NAME) $(OBJS)
+	@ar rcs $(NAME) $(OBJS)
 
 all:	$(NAME)
 
 clean:
-	$(RM) $(OBJS)
+	@$(RM) $(OBJS)
 
 fclean: clean
-	$(RM) $(NAME)
+	@$(RM) $(NAME)
 
 re:	fclean all
 

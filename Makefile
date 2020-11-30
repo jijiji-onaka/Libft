@@ -6,7 +6,7 @@
 #    By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/06/23 20:15:31 by tjinichi          #+#    #+#              #
-#    Updated: 2020/11/26 17:08:28 by tjinichi         ###   ########.fr        #
+#    Updated: 2020/11/30 23:34:51 by tjinichi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -66,7 +66,9 @@ SRCS =	srcs/ft_atoi.c \
 		srcs/ft_stov.c \
 		srcs/ft_strcmp.c \
 		srcs/joint_number.c \
-		srcs/file_tail_number.c
+		srcs/file_tail_number.c \
+		srcs/ft_swap.c \
+		srcs/ft_strsort.c \
 
 
 BONUS =	srcs/ft_lstadd_back.c \
@@ -82,20 +84,23 @@ BONUS =	srcs/ft_lstadd_back.c \
 OBJS = $(SRCS:.c=.o)
 BONUSOBJS = $(BONUS:.c=.o)
 
+%.o: %.c
+	@$(CC) $(CFLAGS) -c -o $@ $<
+
 $(NAME): $(OBJS)
-	make -C ./srcs/libvec3D
-	cp ./srcs/libvec3D/libvec.a $(NAME)
-	ar rcs $(NAME) $(OBJS)
+	@make -C ./srcs/libvec3D
+	@cp ./srcs/libvec3D/libvec.a $(NAME)
+	@ar rcs $(NAME) $(OBJS)
 
 all:	$(NAME)
 
 clean:
-	make clean -C ./srcs/libvec3D
-	$(RM) $(OBJS) $(BONUSOBJS)
+	@make clean -C ./srcs/libvec3D
+	@$(RM) $(OBJS) $(BONUSOBJS)
 
 fclean: clean
-	make fclean -C ./srcs/libvec3D
-	$(RM) $(NAME)
+	@make fclean -C ./srcs/libvec3D
+	@$(RM) $(NAME)
 
 re:	fclean all
 

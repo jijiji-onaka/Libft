@@ -1,36 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stov.c                                          :+:      :+:    :+:   */
+/*   ft_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/16 18:46:08 by tjinichi          #+#    #+#             */
-/*   Updated: 2020/11/30 22:51:50 by tjinichi         ###   ########.fr       */
+/*   Created: 2020/11/30 23:32:25 by tjinichi          #+#    #+#             */
+/*   Updated: 2020/11/30 23:32:35 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_stov(char *s, t_p3 *p)
+void	ft_swap(void **a, void **b)
 {
-	char	**a;
-	int		ret;
+	void	*tmp;
 
-	if (!(a = ft_split(s, ',')))
-		return (0);
-	ret = 0;
-	if (count_2d(a) != 3)
-	{
-		array_free_2d((void***)&a, count_2d(a));
-		return (0);
-	}
-	if (!ft_stod(a[0], &(p->x)) ||
-		!ft_stod(a[1], &(p->y)) ||
-		!ft_stod(a[2], &(p->z)))
-		ret = 1;
-	array_free_2d((void***)&a, count_2d(a));
-	if (ret == 1)
-		return (0);
-	return (1);
+	tmp = *a;
+	*a = *b;
+	*b = tmp;
 }
