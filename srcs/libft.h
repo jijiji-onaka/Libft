@@ -6,7 +6,7 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/22 15:23:39 by tjinichi          #+#    #+#             */
-/*   Updated: 2020/12/02 03:32:09 by tjinichi         ###   ########.fr       */
+/*   Updated: 2020/12/02 03:45:11 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,5 +84,6 @@ long long		file_tail_number(char *s);
 void			ft_swap(void **a, void **b);
 void			ft_strsort(char **str, int(*cmp_by)(char *, char *));
 void			two_2d_ptr_free(void ***p1, void ***p2);
+void			ft_ptr_free(void **ptr);
 
 #endif

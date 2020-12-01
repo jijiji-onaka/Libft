@@ -6,7 +6,7 @@
 #    By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/06/23 20:15:31 by tjinichi          #+#    #+#              #
-#    Updated: 2020/12/01 18:07:49 by tjinichi         ###   ########.fr        #
+#    Updated: 2020/12/02 03:44:59 by tjinichi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -70,6 +70,7 @@ SRCS =	srcs/ft_atoi.c \
 		srcs/ft_swap.c \
 		srcs/ft_strsort.c \
 		srcs/ft_two_2d_ptr_free.c \
+		srcs/ft_ptr_free.c \
 
 
 BONUS =	srcs/ft_lstadd_back.c \
