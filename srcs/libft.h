@@ -6,7 +6,7 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/22 15:23:39 by tjinichi          #+#    #+#             */
-/*   Updated: 2020/11/30 23:33:00 by tjinichi         ###   ########.fr       */
+/*   Updated: 2020/12/01 18:05:21 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,7 @@ char			*create_file_name(char *directory, char *file, char *extension);
 char			*joint_number(char *s, long long num);
 long long		file_tail_number(char *s);
 void			ft_swap(void **a, void **b);
-void			ft_strswap(char **str);
+void			ft_strsort(char **str);
+void			two_2d_ptr_free(void ***p1, void ***p2);
 
 #endif
