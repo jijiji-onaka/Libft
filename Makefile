@@ -86,22 +86,22 @@ OBJS = $(SRCS:.c=.o)
 BONUSOBJS = $(BONUS:.c=.o)
 
 %.o: %.c
-	@$(CC) $(CFLAGS) -c -o $@ $<
+	$(CC) $(CFLAGS) -c -o $@ $<
 
 $(NAME): $(OBJS)
-	@make -C ./srcs/libvec3D
-	@cp ./srcs/libvec3D/libvec.a $(NAME)
-	@ar rcs $(NAME) $(OBJS)
+	make -C ./srcs/libvec3D
+	cp ./srcs/libvec3D/libvec.a $(NAME)
+	ar rcs $(NAME) $(OBJS)
 
 all:	$(NAME)
 
 clean:
-	@make clean -C ./srcs/libvec3D
-	@$(RM) $(OBJS) $(BONUSOBJS)
+	make clean -C ./srcs/libvec3D
+	$(RM) $(OBJS) $(BONUSOBJS)
 
 fclean: clean
-	@make fclean -C ./srcs/libvec3D
-	@$(RM) $(NAME)
+	make fclean -C ./srcs/libvec3D
+	$(RM) $(NAME)
 
 re:	fclean all
 
