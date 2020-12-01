@@ -6,7 +6,7 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/22 15:23:39 by tjinichi          #+#    #+#             */
-/*   Updated: 2020/12/02 03:45:11 by tjinichi         ###   ########.fr       */
+/*   Updated: 2020/12/02 05:24:17 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 # include <string.h>
 # include <unistd.h>
 # include <limits.h>
+# include <sys/stat.h>
+# include <time.h>
 # include "libvec3D/ray.h"
 
 typedef struct	s_list
@@ -85,5 +87,6 @@ void			ft_swap(void **a, void **b);
 void			ft_strsort(char **str, int(*cmp_by)(char *, char *));
 void			two_2d_ptr_free(void ***p1, void ***p2);
 void			ft_ptr_free(void **ptr);
+int				sort_by_mtime_from_little(char *s1, char *s2);
 
 #endif

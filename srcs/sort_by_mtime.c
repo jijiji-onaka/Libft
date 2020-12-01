@@ -1,34 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsort.c                                       :+:      :+:    :+:   */
+/*   sort_by_mtime.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/30 23:34:18 by tjinichi          #+#    #+#             */
-/*   Updated: 2020/12/02 05:23:33 by tjinichi         ###   ########.fr       */
+/*   Created: 2020/12/02 05:23:37 by tjinichi          #+#    #+#             */
+/*   Updated: 2020/12/02 05:24:41 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_strsort(char **str, int(*cmp_by)(char *, char *))
+int		sort_by_mtime_from_little(char *s1, char *s2)
 {
-	int		i;
-	int		j;
-	int		str_num;
+	struct stat	stat_buf;
+	time_t		s1_time;
+	time_t		s2_time;
 
-	i = 0;
-	str_num = count_2d(str);
-	while (i < str_num - 1)
-	{
-		j = i + 1;
-		while (j < str_num)
-		{
-			if ((*cmp_by)(str[i], str[j]) > 0)
-				ft_swap((void**)&(str[i]), (void**)&(str[j]));
-			j++;
-		}
-		i++;
-	}
+	if (lstat(s1, &stat_buf) != 0)
+		return (INT_MIN);
+	s1_time = stat_buf.st_mtime;
+	if (lstat(s2, &stat_buf) != 0)
+		return (INT_MIN);
+	s2_time = stat_buf.st_mtime;
+	return (-(s1_time - s2_time));
 }
