@@ -6,13 +6,13 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/30 23:34:18 by tjinichi          #+#    #+#             */
-/*   Updated: 2020/11/30 23:35:32 by tjinichi         ###   ########.fr       */
+/*   Updated: 2020/12/02 03:31:53 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_strsort(char **str)
+void	ft_strsort(char **str, int(*cmp_by)(char *, char *))
 {
 	int		i;
 	int		j;
@@ -25,7 +25,7 @@ void	ft_strsort(char **str)
 		j = i + 1;
 		while (j < str_num)
 		{
-			if (ft_strcmp(str[i], str[j]) > 0)
+			if ((*cmp_by)(str[i], str[j]) > 0)
 				ft_swap((void**)&(str[i]), (void**)&(str[j]));
 			j++;
 		}
