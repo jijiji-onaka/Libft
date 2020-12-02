@@ -84,7 +84,7 @@ char			*create_file_name(char *directory, char *file, char *extension);
 char			*joint_number(char *s, long long num);
 long long		file_tail_number(char *s);
 void			ft_swap(void **a, void **b);
-void			ft_strsort(char **str, int(*cmp_by)(char *, char *));
+int				ft_strsort(char **str, int(*cmp_by)(char *, char *));
 void			two_2d_ptr_free(void ***p1, void ***p2);
 void			ft_ptr_free(void **ptr);
 int				sort_by_mtime_from_little(char *s1, char *s2);
