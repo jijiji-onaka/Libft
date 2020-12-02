@@ -22,7 +22,7 @@ long long		ft_numlen(long long n)
 		n *= -1;
 		cnt++;
 	}
-	while (n > 0)
+	while (n >= 0)
 	{
 		cnt++;
 		n /= 10;
