@@ -12,11 +12,12 @@
 
 #include "libft.h"
 
-void	ft_strsort(char **str, int(*cmp_by)(char *, char *))
+int		ft_strsort(char **str, int(*cmp_by)(char *, char *))
 {
 	int		i;
 	int		j;
 	int		str_num;
+	int		tmp;
 
 	i = 0;
 	str_num = count_2d(str);
@@ -25,10 +26,14 @@ void	ft_strsort(char **str, int(*cmp_by)(char *, char *))
 		j = i + 1;
 		while (j < str_num)
 		{
-			if ((*cmp_by)(str[i], str[j]) > 0)
+			if ((tmp = (*cmp_by)(str[i], str[j])) == INT_MIN)
+				return (EXIT_FAILURE);
+			if (tmp > 0)
 				ft_swap((void**)&(str[i]), (void**)&(str[j]));
 			j++;
 		}
 		i++;
 	}
+	return (EXIT_SUCCESS);
 }
+
