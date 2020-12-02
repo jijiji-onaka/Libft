@@ -17,7 +17,7 @@ long long		ft_numlen(long long n)
 	long long		cnt;
 
 	cnt = 0;
-	if (n < 0)
+	if (n <= 0)
 	{
 		n *= -1;
 		cnt++;
