@@ -6,24 +6,24 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/16 17:51:36 by tjinichi          #+#    #+#             */
-/*   Updated: 2020/11/30 21:41:20 by tjinichi         ###   ########.fr       */
+/*   Updated: 2020/12/02 21:08:10 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void		*array_free_2d(void ***res, int cur)
+void		*array_free_2d(void ***ptr, int cur)
 {
 	int		i;
 
 	i = 0;
-	while (i < cur)
+	while ((*ptr)[i] && i < cur)
 	{
-		free((*res)[i]);
-		(*res)[i] = NULL;
+		free((*ptr)[i]);
+		(*ptr)[i] = NULL;
 		i++;
 	}
-	free(*res);
-	*res = NULL;
+	free(*ptr);
+	*ptr = NULL;
 	return (NULL);
 }
