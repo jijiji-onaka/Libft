@@ -6,13 +6,13 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/30 23:34:18 by tjinichi          #+#    #+#             */
-/*   Updated: 2020/12/02 05:23:33 by tjinichi         ###   ########.fr       */
+/*   Updated: 2020/12/04 01:40:47 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_strsort(char **str, int(*cmp_by)(char *, char *))
+int		ft_strsort(char **str, int (*cmp_by)(char *, char *))
 {
 	int		i;
 	int		j;
@@ -36,4 +36,3 @@ int		ft_strsort(char **str, int(*cmp_by)(char *, char *))
 	}
 	return (EXIT_SUCCESS);
 }
-

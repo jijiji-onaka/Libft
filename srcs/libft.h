@@ -6,7 +6,7 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/22 15:23:39 by tjinichi          #+#    #+#             */
-/*   Updated: 2020/12/02 05:24:17 by tjinichi         ###   ########.fr       */
+/*   Updated: 2020/12/04 01:42:37 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,5 +88,6 @@ int				ft_strsort(char **str, int(*cmp_by)(char *, char *));
 void			two_2d_ptr_free(void ***p1, void ***p2);
 void			ft_ptr_free(void **ptr);
 int				sort_by_mtime_from_little(char *s1, char *s2);
+char			*ft_str3join(char *s1, char *s2, char *s3);
 
 #endif
