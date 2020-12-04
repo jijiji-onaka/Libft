@@ -6,7 +6,7 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/22 15:23:39 by tjinichi          #+#    #+#             */
-/*   Updated: 2020/12/04 01:42:37 by tjinichi         ###   ########.fr       */
+/*   Updated: 2020/12/03 18:38:54 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@
 # include <string.h>
 # include <unistd.h>
 # include <limits.h>
-# include <sys/stat.h>
-# include <time.h>
 # include "libvec3D/ray.h"
 
 typedef struct	s_list
@@ -43,7 +41,6 @@ int				ft_tolower(int c);
 int				ft_isspace(char str);
 int				list_length(t_list *head);
 int				ft_strncmp(const char *s1, const char *s2, size_t n);
-int				ft_strcmp(const char *p1, const char *p2);
 int				ft_atoi(const char *str);
 int				ft_stoi(char *str, int *i);
 int				ft_stod(char *str, double *d);
@@ -87,7 +84,7 @@ void			ft_swap(void **a, void **b);
 int				ft_strsort(char **str, int(*cmp_by)(char *, char *));
 void			two_2d_ptr_free(void ***p1, void ***p2);
 void			ft_ptr_free(void **ptr);
-int				sort_by_mtime_from_little(char *s1, char *s2);
+int				ft_strcmp(char *p1, char *p2);
 char			*ft_str3join(char *s1, char *s2, char *s3);
 
 #endif
