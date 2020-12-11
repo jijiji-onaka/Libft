@@ -6,7 +6,7 @@
 #    By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/06/23 20:15:31 by tjinichi          #+#    #+#              #
-#    Updated: 2020/12/12 00:36:51 by tjinichi         ###   ########.fr        #
+#    Updated: 2020/12/12 01:39:33 by tjinichi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -95,7 +95,7 @@ SORT_SRCS = $(addprefix $(SORT_DIR)/, \
 #========== string function ====================================================
 STRING_DIR = $(SRCDIR)/string_func
 STRING_SRCS = $(addprefix $(STRING_DIR)/, \
-				check_strtail_num.c \
+				check_strtail.c \
 				ft_split.c \
 				ft_str3join.c \
 				ft_strchr.c \

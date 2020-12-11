@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_strtail_num.c                                :+:      :+:    :+:   */
+/*   check_strtail.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/10 20:37:53 by tjinichi          #+#    #+#             */
-/*   Updated: 2020/12/11 21:25:54 by tjinichi         ###   ########.fr       */
+/*   Updated: 2020/12/12 01:39:27 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/string_func.h"
 
-int			check_strtail_num(char *s, char *tail)
+int			check_strtail(char *s, char *tail)
 {
 	char	*tmp;
 	size_t	tail_len;
