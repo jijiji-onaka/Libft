@@ -6,7 +6,7 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/12 04:21:41 by tjinichi          #+#    #+#             */
-/*   Updated: 2020/12/12 04:23:18 by tjinichi         ###   ########.fr       */
+/*   Updated: 2020/12/12 04:28:11 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*re_strjoinch(char **s, char c)
 	if (!res)
 		return (NULL);
 	i = 0;
-	while (s[i])
+	while ((*s)[i])
 	{
 		res[i] = (*s)[i];
 		i++;
