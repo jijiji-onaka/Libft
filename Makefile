@@ -6,7 +6,7 @@
 #    By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/06/23 20:15:31 by tjinichi          #+#    #+#              #
-#    Updated: 2020/12/11 23:45:32 by tjinichi         ###   ########.fr        #
+#    Updated: 2020/12/12 00:36:51 by tjinichi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -90,6 +90,7 @@ MEMORY_SRCS = $(addprefix $(MEMORY_DIR)/, \
 SORT_DIR = $(SRCDIR)/sort_func
 SORT_SRCS = $(addprefix $(SORT_DIR)/, \
 				ft_swap.c \
+				marge_strsort.c \
 )
 #========== string function ====================================================
 STRING_DIR = $(SRCDIR)/string_func
@@ -108,7 +109,6 @@ STRING_SRCS = $(addprefix $(STRING_DIR)/, \
 				ft_strncmp.c \
 				ft_strnstr.c \
 				ft_strrchr.c \
-				marge_strsort.c \
 				ft_strtrim.c \
 				ft_substr.c \
 				strjoin_num.c \
