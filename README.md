@@ -18,10 +18,10 @@ This creates a static library called `libft.a`.
 
 Please write `#include "libft.h` in the file you want to use,
 
-Compile with `gcc libft.a "required files"`.
+Compile with `gcc Libft/libft.a "required files"`.
 
 ```
-#include "libft.h"
+#include "./Libft/includes/libft.h"
 
 int main()
 {
