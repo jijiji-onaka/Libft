@@ -6,7 +6,7 @@
 #    By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/06/23 20:15:31 by tjinichi          #+#    #+#              #
-#    Updated: 2020/12/12 01:39:33 by tjinichi         ###   ########.fr        #
+#    Updated: 2020/12/12 01:41:08 by tjinichi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -146,7 +146,7 @@ SRCS = \
 	$(FREE_SRCS)	\
 	$(ISWHAT_SRCS)	\
 	$(LST_SRCS)		\
-	$(MEMMORY_SRCS)	\
+	$(MEMORY_SRCS)	\
 	$(SORT_SRCS)	\
 	$(STRING_SRCS)	\
 	$(VEC3D_SRCS)	\
