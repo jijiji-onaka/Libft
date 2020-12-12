@@ -1,33 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   re_strjoinch.c                                     :+:      :+:    :+:   */
+/*   re_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/12 04:21:41 by tjinichi          #+#    #+#             */
-/*   Updated: 2020/12/13 04:04:10 by tjinichi         ###   ########.fr       */
+/*   Created: 2020/12/13 04:01:34 by tjinichi          #+#    #+#             */
+/*   Updated: 2020/12/13 04:04:53 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/string_func.h"
 
-char	*re_strjoinch(char **s, char c)
+char	*re_strdup(char **s1)
 {
 	char	*res;
-	size_t	i;
+	size_t	len;
 
-	res = malloc(ft_strlen(*s) + 1 + 1);
-	if (!res)
+	if (*s1 == NULL)
+		return (ft_strdup(""));
+	len = ft_strlen(*s1) + 1;
+	if (!(res = malloc(sizeof(char) * (len))))
 		return (NULL);
-	i = 0;
-	while ((*s)[i])
-	{
-		res[i] = (*s)[i];
-		i++;
-	}
-	res[i++] = c;
-	res[i] = '\0';
-	ptr_free((void**)s);
+	ft_memcpy(res, *s1, len);
+	ptr_free((void**)s1);
 	return (res);
 }
