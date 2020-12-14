@@ -6,7 +6,7 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/10 20:46:45 by tjinichi          #+#    #+#             */
-/*   Updated: 2020/12/13 04:06:31 by tjinichi         ###   ########.fr       */
+/*   Updated: 2020/12/15 01:47:50 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,5 +42,6 @@ char			*ft_substr(char const *s, unsigned int start, size_t len);
 char			*strjoin_num(char *s, long long num);
 char			*re_strjoinch(char **s, char c);
 char			*re_strdup(char **s1);
+char			*re_strjoin(char **s1, char *s2);
 
 #endif

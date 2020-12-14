@@ -1,21 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isspace.c                                       :+:      :+:    :+:   */
+/*   skip_space.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/26 23:47:38 by tjinichi          #+#    #+#             */
-/*   Updated: 2020/12/15 03:13:27 by tjinichi         ###   ########.fr       */
+/*   Created: 2020/12/13 18:24:32 by tjinichi          #+#    #+#             */
+/*   Updated: 2020/12/13 18:28:18 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/iswhat_func.h"
+#include "../../includes/convert_func.h"
 
-bool	ft_isspace(int c)
+char	*skip_space(char *s)
 {
-	if (c && (c == ' ' || c == '\n' || c == '\t' ||
-			c == '\v' || c == '\f' || c == '\r'))
-		return (1);
-	return (0);
+	while (*s == ' ')
+		s++;
+	return (s);
 }

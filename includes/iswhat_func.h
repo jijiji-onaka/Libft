@@ -6,18 +6,23 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/10 20:46:35 by tjinichi          #+#    #+#             */
-/*   Updated: 2020/12/11 21:12:22 by tjinichi         ###   ########.fr       */
+/*   Updated: 2020/12/15 03:14:32 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ISWHAT_FUNC_H
 # define ISWHAT_FUNC_H
 
-int	ft_isalnum(int c);
-int	ft_isalpha(int c);
-int	ft_isascii(int c);
-int	ft_isdigit(int c);
-int	ft_isprint(int c);
-int	ft_isspace(char c);
+# include <stdbool.h>
+
+bool		ft_isalnum(int c);
+bool		ft_isalpha(int c);
+bool		ft_isascii(int c);
+bool		ft_isdigit(int c);
+bool		ft_isprint(int c);
+bool		ft_isspace(int c);
+bool		isdouble_quotation(int c);
+bool		issingle_quotation(int c);
+bool		isquotation(int c);
 
 #endif

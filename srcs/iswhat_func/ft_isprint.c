@@ -6,13 +6,13 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/22 22:43:38 by tjinichi          #+#    #+#             */
-/*   Updated: 2020/12/11 22:07:22 by tjinichi         ###   ########.fr       */
+/*   Updated: 2020/12/15 03:12:52 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/iswhat_func.h"
 
-int	ft_isprint(int c)
+bool	ft_isprint(int c)
 {
 	return (c >= 32 && c <= 126);
 }

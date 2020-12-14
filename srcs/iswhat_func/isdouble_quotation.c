@@ -1,21 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isspace.c                                       :+:      :+:    :+:   */
+/*   isdouble_quotation.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/26 23:47:38 by tjinichi          #+#    #+#             */
-/*   Updated: 2020/12/15 03:13:27 by tjinichi         ###   ########.fr       */
+/*   Created: 2020/12/15 03:10:11 by tjinichi          #+#    #+#             */
+/*   Updated: 2020/12/15 03:13:31 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/iswhat_func.h"
 
-bool	ft_isspace(int c)
+bool	isdouble_quotation(int c)
 {
-	if (c && (c == ' ' || c == '\n' || c == '\t' ||
-			c == '\v' || c == '\f' || c == '\r'))
-		return (1);
-	return (0);
+	return (c == '\"');
 }

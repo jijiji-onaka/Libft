@@ -6,7 +6,7 @@
 #    By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/06/23 20:15:31 by tjinichi          #+#    #+#              #
-#    Updated: 2020/12/13 04:05:27 by tjinichi         ###   ########.fr        #
+#    Updated: 2020/12/15 03:11:42 by tjinichi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,6 +30,7 @@ CONVERT_SRCS = $(addprefix $(CONVERT_DIR)/, \
 				ft_stod.c \
 				ft_stoi.c \
 				ft_stov.c \
+				skip_space.c \
 )
 #========== count function =====================================================
 COUNT_DIR = $(SRCDIR)/count_func
@@ -60,6 +61,9 @@ ISWHAT_SRCS = $(addprefix $(ISWHAT_DIR)/, \
 				ft_isdigit.c \
 				ft_isprint.c \
 				ft_isspace.c \
+				isdouble_quotation.c \
+				issingle_quotation.c \
+				isquotation.c \
 )
 #========== lst function =======================================================
 LST_DIR = $(SRCDIR)/lst_func
@@ -115,6 +119,7 @@ STRING_SRCS = $(addprefix $(STRING_DIR)/, \
 				strtail_number.c \
 				re_strjoinch.c \
 				re_strdup.c \
+				re_strjoin.c \
 )
 #========== 3Dvecter function ==================================================
 VEC3D_DIR = $(SRCDIR)/vec3d_func

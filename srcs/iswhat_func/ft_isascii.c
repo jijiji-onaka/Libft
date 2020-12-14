@@ -6,13 +6,13 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/22 22:08:24 by tjinichi          #+#    #+#             */
-/*   Updated: 2020/12/11 22:07:17 by tjinichi         ###   ########.fr       */
+/*   Updated: 2020/12/15 03:12:44 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/iswhat_func.h"
 
-int	ft_isascii(int c)
+bool	ft_isascii(int c)
 {
 	return (c >= 0 && c <= 127);
 }

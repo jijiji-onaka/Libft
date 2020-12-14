@@ -6,7 +6,7 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/10 20:46:17 by tjinichi          #+#    #+#             */
-/*   Updated: 2020/12/11 23:41:21 by tjinichi         ###   ########.fr       */
+/*   Updated: 2020/12/13 18:26:56 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,6 @@ int			ft_stoi(char *str, int *i);
 int			ft_stov(char *s, t_p3 *p);
 int			ft_tolower(int c);
 int			ft_toupper(int c);
+char		*skip_space(char *s);
 
 #endif

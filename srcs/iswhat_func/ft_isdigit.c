@@ -6,13 +6,13 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/22 20:45:34 by tjinichi          #+#    #+#             */
-/*   Updated: 2020/12/11 22:07:20 by tjinichi         ###   ########.fr       */
+/*   Updated: 2020/12/15 03:12:48 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/iswhat_func.h"
 
-int	ft_isdigit(int c)
+bool	ft_isdigit(int c)
 {
 	return (c >= '0' && c <= '9');
 }
