@@ -6,7 +6,7 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/13 18:24:32 by tjinichi          #+#    #+#             */
-/*   Updated: 2020/12/13 18:28:18 by tjinichi         ###   ########.fr       */
+/*   Updated: 2020/12/15 23:24:16 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*skip_space(char *s)
 {
-	while (*s == ' ')
+	while (*s && *s == ' ')
 		s++;
 	return (s);
 }
