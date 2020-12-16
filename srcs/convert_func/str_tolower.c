@@ -1,33 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   re_strjoinch.c                                     :+:      :+:    :+:   */
+/*   str_tolower.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/12 04:21:41 by tjinichi          #+#    #+#             */
-/*   Updated: 2020/12/16 02:06:03 by tjinichi         ###   ########.fr       */
+/*   Created: 2020/12/17 05:58:27 by tjinichi          #+#    #+#             */
+/*   Updated: 2020/12/17 06:37:00 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/string_func.h"
+#include "../../includes/convert_func.h"
 
-char	*re_strjoinch(char **s, char c)
+/*
+** Returns allocate.
+*/
+
+char	*str_tolower(char *s)
 {
-	char	*res;
+	char	*tmp;
 	size_t	i;
 
-	res = malloc(ft_strlen(*s) + 1 + 1);
-	if (!res)
-		return (NULL);
 	i = 0;
-	while ((*s)[i])
+	if (!(tmp = malloc(ft_strlen(s) + 1)))
+		return (NULL);
+	while (s[i])
 	{
-		res[i] = (*s)[i];
+		tmp[i] = ft_tolower(s[i]);
 		i++;
 	}
-	res[i++] = c;
-	res[i] = '\0';
-	ptr_free((void**)s);
-	return (res);
+	tmp[i] = '\0';
+	return (tmp);
 }
