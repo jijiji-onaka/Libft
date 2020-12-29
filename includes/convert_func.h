@@ -6,7 +6,7 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/10 20:46:17 by tjinichi          #+#    #+#             */
-/*   Updated: 2020/12/17 06:33:03 by tjinichi         ###   ########.fr       */
+/*   Updated: 2020/12/30 05:15:23 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ int		ft_stov(char *s, t_p3 *p);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
 char	*skip_space(char *s);
-char	*str_tolower(char *s);
+void	str_tolower(char **s);
+char	**split_by_str(char *str, char *charset);
+char	**ft_split(char const *s, char c);
 
 #endif
