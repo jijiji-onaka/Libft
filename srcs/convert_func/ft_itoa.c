@@ -6,11 +6,15 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/23 12:32:53 by tjinichi          #+#    #+#             */
-/*   Updated: 2020/12/11 21:31:34 by tjinichi         ###   ########.fr       */
+/*   Updated: 2020/12/17 22:10:32 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/convert_func.h"
+
+/*
+** Returns allocate.
+*/
 
 char			*ft_itoa(int n)
 {

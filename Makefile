@@ -6,7 +6,7 @@
 #    By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/06/23 20:15:31 by tjinichi          #+#    #+#              #
-#    Updated: 2020/12/17 06:32:53 by tjinichi         ###   ########.fr        #
+#    Updated: 2020/12/30 20:23:05 by tjinichi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,13 @@ RM = rm
 INCLUDES = $(wildcard ./includes/*.h)
 SRCDIR = ./srcs
 OBJDIR = $(SRCDIR)/objs
+#========== algorithm function ======================================================
+ALGORITHM_DIR = $(SRCDIR)/algorithm_func
+ALGORITHM_SRCS = $(addprefix $(ALGORITHM_DIR)/, \
+				ft_swap.c \
+				marge_strsort.c \
+				str_bsearch.c \
+)
 # ========= convert function ===================================================
 CONVERT_DIR = $(SRCDIR)/convert_func
 CONVERT_SRCS = $(addprefix $(CONVERT_DIR)/, \
@@ -32,6 +39,8 @@ CONVERT_SRCS = $(addprefix $(CONVERT_DIR)/, \
 				ft_stov.c \
 				skip_space.c \
 				str_tolower.c \
+				ft_split.c \
+				split_by_str.c \
 )
 #========== count function =====================================================
 COUNT_DIR = $(SRCDIR)/count_func
@@ -91,17 +100,10 @@ MEMORY_SRCS = $(addprefix $(MEMORY_DIR)/, \
 				ft_memmove.c \
 				ft_memset.c \
 )
-#========== sort function ======================================================
-SORT_DIR = $(SRCDIR)/sort_func
-SORT_SRCS = $(addprefix $(SORT_DIR)/, \
-				ft_swap.c \
-				marge_strsort.c \
-)
 #========== string function ====================================================
 STRING_DIR = $(SRCDIR)/string_func
 STRING_SRCS = $(addprefix $(STRING_DIR)/, \
 				check_strtail.c \
-				ft_split.c \
 				ft_str3join.c \
 				ft_strchr.c \
 				ft_strcmp.c \
@@ -145,9 +147,12 @@ WRITE_SRCS = $(addprefix $(WRITE_DIR)/, \
 				ft_putstr_fd.c \
 				ft_putnbr_fd.c \
 				ft_putendl_fd.c \
+				red_error.c \
+				yellow_warning.c \
 )
 #========== Srcs and Objs ======================================================
 SRCS = \
+	$(ALGORITHM_SRCS) \
 	$(CONVERT_SRCS)	\
 	$(COUNT_SRCS)	\
 	$(FILE_SRCS)	\
@@ -155,7 +160,6 @@ SRCS = \
 	$(ISWHAT_SRCS)	\
 	$(LST_SRCS)		\
 	$(MEMORY_SRCS)	\
-	$(SORT_SRCS)	\
 	$(STRING_SRCS)	\
 	$(VEC3D_SRCS)	\
 	$(WRITE_SRCS)	\
@@ -186,8 +190,11 @@ C		=	$(words $N)${eval N += 1}
 ECHO	=	"[`expr $C  '*' 100 / $T`%]"
 
 # ========== Make objs =========================================================
-$(OBJDIR)/%.o : $(CONVERT_DIR)/%.c
+$(OBJDIR)/%.o : $(ALGORITHM_DIR)/%.c
 	@mkdir -p $(OBJDIR)
+	@$(CC) $(CFLAGS) -c -o $@ $<
+	@printf " %-100b\r" "$(YELLOW)$(ECHO) Compiling  $(RESET)$(UNDER_LINE)"$@"$(RESET)"
+$(OBJDIR)/%.o : $(CONVERT_DIR)/%.c
 	@$(CC) $(CFLAGS) -c -o $@ $<
 	@printf " %-100b\r" "$(YELLOW)$(ECHO) Compiling  $(RESET)$(UNDER_LINE)"$@"$(RESET)"
 $(OBJDIR)/%.o : $(COUNT_DIR)/%.c
@@ -206,9 +213,6 @@ $(OBJDIR)/%.o : $(LST_DIR)/%.c
 	@$(CC) $(CFLAGS) -c -o $@ $<
 	@printf " %-100b\r" "$(YELLOW)$(ECHO) Compiling  $(RESET)$(UNDER_LINE)"$@"$(RESET)"
 $(OBJDIR)/%.o : $(MEMORY_DIR)/%.c
-	@$(CC) $(CFLAGS) -c -o $@ $<
-	@printf " %-100b\r" "$(YELLOW)$(ECHO) Compiling  $(RESET)$(UNDER_LINE)"$@"$(RESET)"
-$(OBJDIR)/%.o : $(SORT_DIR)/%.c
 	@$(CC) $(CFLAGS) -c -o $@ $<
 	@printf " %-100b\r" "$(YELLOW)$(ECHO) Compiling  $(RESET)$(UNDER_LINE)"$@"$(RESET)"
 $(OBJDIR)/%.o : $(STRING_DIR)/%.c

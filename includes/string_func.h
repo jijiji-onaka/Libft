@@ -6,7 +6,7 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/10 20:46:45 by tjinichi          #+#    #+#             */
-/*   Updated: 2020/12/16 02:18:25 by tjinichi         ###   ########.fr       */
+/*   Updated: 2020/12/17 21:20:40 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ typedef struct	s_index
 }				t_index;
 
 int				check_strtail(char *s, char *tail);
-char			**ft_split(char const *s, char c);
 char			*ft_str3join(char *s1, char *s2, char *s3);
 char			*ft_strchr(const char *s, int c);
 int				ft_strcmp(char *p1, char *p2);

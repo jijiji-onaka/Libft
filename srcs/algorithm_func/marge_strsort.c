@@ -6,11 +6,11 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/30 23:34:18 by tjinichi          #+#    #+#             */
-/*   Updated: 2020/12/12 00:35:47 by tjinichi         ###   ########.fr       */
+/*   Updated: 2020/12/30 20:07:03 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/string_func.h"
+#include "../../includes/algorithm_func.h"
 
 /*
 ** Make sure that the cmp_by function returns 1, 0, or -1.

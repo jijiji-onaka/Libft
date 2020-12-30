@@ -6,7 +6,7 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/23 13:00:41 by tjinichi          #+#    #+#             */
-/*   Updated: 2020/12/11 21:26:21 by tjinichi         ###   ########.fr       */
+/*   Updated: 2020/12/17 22:33:34 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	char	*res;
-	int		i;
+	char				*res;
+	unsigned int		i;
 
 	if (!f || !s)
 		return (NULL);

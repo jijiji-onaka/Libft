@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_func.h                                        :+:      :+:    :+:   */
+/*   ft_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/10 20:46:43 by tjinichi          #+#    #+#             */
-/*   Updated: 2020/12/12 00:34:02 by tjinichi         ###   ########.fr       */
+/*   Created: 2020/11/30 23:32:25 by tjinichi          #+#    #+#             */
+/*   Updated: 2020/12/30 20:06:42 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SORT_FUNC_H
-# define SORT_FUNC_H
+#include "../../includes/algorithm_func.h"
 
-# include "libft.h"
+void	ft_swap(void **a, void **b)
+{
+	void	*tmp;
 
-void	ft_swap(void **a, void **b);
-int		marge_strsort(char **array, size_t begin, \
-			size_t end, int (*cmp_by)());
-
-#endif
+	tmp = *a;
+	*a = *b;
+	*b = tmp;
+}

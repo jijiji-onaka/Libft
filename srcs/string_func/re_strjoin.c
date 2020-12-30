@@ -6,7 +6,7 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/15 01:45:50 by tjinichi          #+#    #+#             */
-/*   Updated: 2020/12/15 02:33:05 by tjinichi         ###   ########.fr       */
+/*   Updated: 2020/12/17 22:34:00 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,6 @@ char	*re_strjoin(char **s1, char *s2)
 		j++;
 	}
 	res[i + j] = '\0';
-	// printf("s1 = %s\n", *s1);
 	ptr_free((void**)s1);
-	// printf("res = %s\n", res);
-	// printf("s2 = %s\n", s2);
 	return (res);
 }

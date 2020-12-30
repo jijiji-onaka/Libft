@@ -6,15 +6,15 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/23 11:43:10 by tjinichi          #+#    #+#             */
-/*   Updated: 2020/12/11 21:33:09 by tjinichi         ###   ########.fr       */
+/*   Updated: 2020/12/17 22:10:01 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/string_func.h"
+#include "../../includes/convert_func.h"
 
-static int		word_count(char const *s, char c)
+static size_t	word_count(char const *s, char c)
 {
-	int		cnt;
+	size_t		cnt;
 
 	cnt = 0;
 	while (*s)
@@ -31,23 +31,21 @@ static int		word_count(char const *s, char c)
 	return (cnt);
 }
 
-static int		word_length(char const *s, char c)
+static size_t	word_length(char const *s, char c)
 {
-	int		i;
+	size_t		i;
 
 	i = 0;
 	while (s[i] != c && s[i])
-	{
 		i++;
-	}
 	return (i);
 }
 
-static char		**insert_word(char const *s, char c, int wc, char **res)
+static char		**insert_word(char const *s, char c, size_t wc, char **res)
 {
-	int		i;
-	int		j;
-	int		len;
+	size_t		i;
+	size_t		j;
+	size_t		len;
 
 	i = 0;
 	while (i < wc)
@@ -71,8 +69,8 @@ static char		**insert_word(char const *s, char c, int wc, char **res)
 
 char			**ft_split(char const *s, char c)
 {
-	char	**res;
-	int		wc;
+	char		**res;
+	size_t		wc;
 
 	if (!s)
 		return (NULL);

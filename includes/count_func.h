@@ -6,7 +6,7 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/10 20:46:21 by tjinichi          #+#    #+#             */
-/*   Updated: 2020/12/11 22:06:39 by tjinichi         ###   ########.fr       */
+/*   Updated: 2020/12/17 22:12:05 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 # include "libft.h"
 
-int				count_2d(char **ss);
-long long		ft_numlen(long long n);
+size_t			count_2d(char **array_2d);
+size_t			ft_numlen(long long n);
 size_t			ft_strlen(const char *str);
 
 #endif

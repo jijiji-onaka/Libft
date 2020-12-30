@@ -1,29 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ptr_2d_free.c                                      :+:      :+:    :+:   */
+/*   red_error.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/16 17:51:36 by tjinichi          #+#    #+#             */
-/*   Updated: 2020/12/17 22:44:51 by tjinichi         ###   ########.fr       */
+/*   Created: 2020/12/17 22:16:42 by tjinichi          #+#    #+#             */
+/*   Updated: 2020/12/17 22:16:54 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/free_func.h"
+#include "../../includes/write_func.h"
 
-void		*ptr_2d_free(void ***ptr, size_t cur)
+/*
+** [Error]を赤文字(\033[31m)・太文字(\033[1m)で出す関数
+*/
+
+void	red_error(void)
 {
-	size_t		i;
-
-	i = 0;
-	while ((*ptr)[i] && i < cur)
-	{
-		free((*ptr)[i]);
-		(*ptr)[i] = NULL;
-		i++;
-	}
-	free(*ptr);
-	*ptr = NULL;
-	return (NULL);
+	write(1, "\033[31m\033[1m[Error]\033[0m\n", 21);
 }

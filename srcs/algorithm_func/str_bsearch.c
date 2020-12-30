@@ -1,29 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ptr_2d_free.c                                      :+:      :+:    :+:   */
+/*   str_bsearch.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/16 17:51:36 by tjinichi          #+#    #+#             */
-/*   Updated: 2020/12/17 22:44:51 by tjinichi         ###   ########.fr       */
+/*   Created: 2020/12/30 20:08:45 by tjinichi          #+#    #+#             */
+/*   Updated: 2020/12/30 20:11:52 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/free_func.h"
+#include "../../includes/algorithm_func.h"
 
-void		*ptr_2d_free(void ***ptr, size_t cur)
+int		str_bsearch(char *key, const char *base[], int array_size)
 {
-	size_t		i;
+	int	left;
+	int	right;
+	int	mid;
+	int	tmp;
 
-	i = 0;
-	while ((*ptr)[i] && i < cur)
+	left = 0;
+	right = array_size;
+	if (left == right)
+		return (-1);
+	while (left <= right)
 	{
-		free((*ptr)[i]);
-		(*ptr)[i] = NULL;
-		i++;
+		mid = (left + right) / 2;
+		if ((tmp = strcmp(key, base[mid])) == 0)
+			return (mid);
+		else if (tmp > 0)
+			left = mid + 1;
+		else
+			right = mid - 1;
 	}
-	free(*ptr);
-	*ptr = NULL;
-	return (NULL);
+	return (right + 1);
 }

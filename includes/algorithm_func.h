@@ -1,29 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ptr_2d_free.c                                      :+:      :+:    :+:   */
+/*   algorithm_func.h                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/16 17:51:36 by tjinichi          #+#    #+#             */
-/*   Updated: 2020/12/17 22:44:51 by tjinichi         ###   ########.fr       */
+/*   Created: 2020/12/10 20:46:43 by tjinichi          #+#    #+#             */
+/*   Updated: 2020/12/30 20:12:01 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/free_func.h"
+#ifndef ALGORITHM_FUNC_H
+# define ALGORITHM_FUNC_H
 
-void		*ptr_2d_free(void ***ptr, size_t cur)
-{
-	size_t		i;
+# include "libft.h"
 
-	i = 0;
-	while ((*ptr)[i] && i < cur)
-	{
-		free((*ptr)[i]);
-		(*ptr)[i] = NULL;
-		i++;
-	}
-	free(*ptr);
-	*ptr = NULL;
-	return (NULL);
-}
+void	ft_swap(void **a, void **b);
+int		marge_strsort(char **array, size_t begin, \
+			size_t end, int (*cmp_by)());
+int		str_bsearch(char *key, const char *base[], int array_size);
+
+#endif

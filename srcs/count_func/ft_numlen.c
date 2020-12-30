@@ -6,15 +6,15 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/23 01:57:21 by tjinichi          #+#    #+#             */
-/*   Updated: 2020/12/11 21:30:46 by tjinichi         ###   ########.fr       */
+/*   Updated: 2020/12/17 22:12:29 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/count_func.h"
 
-long long		ft_numlen(long long n)
+size_t		ft_numlen(long long n)
 {
-	long long		cnt;
+	size_t		cnt;
 
 	cnt = 0;
 	if (n <= 0)

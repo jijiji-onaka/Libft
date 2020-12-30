@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_swap.c                                          :+:      :+:    :+:   */
+/*   yellow_warning.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/30 23:32:25 by tjinichi          #+#    #+#             */
-/*   Updated: 2020/12/11 21:28:02 by tjinichi         ###   ########.fr       */
+/*   Created: 2020/12/17 22:17:29 by tjinichi          #+#    #+#             */
+/*   Updated: 2020/12/17 22:18:11 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/sort_func.h"
+#include "../../includes/write_func.h"
 
-void	ft_swap(void **a, void **b)
+/*
+** [Warning]を黄色文字(\033[33m)・太文字(\033[1m)で出す関数
+*/
+
+void	yellow_warning(void)
 {
-	void	*tmp;
-
-	tmp = *a;
-	*a = *b;
-	*b = tmp;
+	write(1, "\033[33m\033[1m[Warning]\033[0m\n", 23);
 }
