@@ -6,7 +6,7 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/23 10:30:25 by tjinichi          #+#    #+#             */
-/*   Updated: 2020/12/11 21:26:38 by tjinichi         ###   ########.fr       */
+/*   Updated: 2021/01/22 02:08:37 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	if (s == NULL)
 		return (NULL);
-	if (ft_strlen(s) <= start)
+	if (!(start == 0 && s[0] == '\0') && ft_strlen(s) <= start)
 		return (ft_strdup(""));
 	mini_len = ft_strlen(&s[start]);
 	if (mini_len < len)

@@ -6,7 +6,7 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/10 20:46:31 by tjinichi          #+#    #+#             */
-/*   Updated: 2020/12/11 21:33:45 by tjinichi         ###   ########.fr       */
+/*   Updated: 2021/01/21 04:57:42 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define FILE_FUNC_H
 
 # include "libft.h"
+# include <stdbool.h>
 # define NO_RETURN 2
 # define R_NL 1
 # define R_EOF 0
@@ -33,5 +34,6 @@ int				get_next_line(int fd, char **line);
 t_gnl			*gnl_lstnew(char *content, int fd);
 void			gnl_lstadd_front(t_gnl **lst, t_gnl *new);
 t_gnl			*recognize_fd(int fd, t_gnl **lst);
+bool			ft_close(int *fd);
 
 #endif

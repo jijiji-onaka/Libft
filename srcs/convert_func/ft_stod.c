@@ -6,28 +6,11 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/27 02:31:48 by tjinichi          #+#    #+#             */
-/*   Updated: 2020/12/11 21:31:38 by tjinichi         ###   ########.fr       */
+/*   Updated: 2021/01/24 19:28:42 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/convert_func.h"
-
-static int		is_float(char *s)
-{
-	if (*s == '-')
-		s++;
-	while (ft_isdigit(*s))
-		s++;
-	if (*s == '.')
-	{
-		s++;
-		while (ft_isdigit(*s))
-			s++;
-	}
-	if (*s)
-		return (0);
-	return (1);
-}
 
 static double	solve(char *a)
 {

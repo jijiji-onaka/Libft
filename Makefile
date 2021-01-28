@@ -6,7 +6,7 @@
 #    By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/06/23 20:15:31 by tjinichi          #+#    #+#              #
-#    Updated: 2020/12/30 20:23:05 by tjinichi         ###   ########.fr        #
+#    Updated: 2021/01/24 23:55:33 by tjinichi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,7 +40,7 @@ CONVERT_SRCS = $(addprefix $(CONVERT_DIR)/, \
 				skip_space.c \
 				str_tolower.c \
 				ft_split.c \
-				split_by_str.c \
+				split_by_chrs.c \
 )
 #========== count function =====================================================
 COUNT_DIR = $(SRCDIR)/count_func
@@ -52,9 +52,10 @@ COUNT_SRCS = $(addprefix $(COUNT_DIR)/, \
 #========== file function ======================================================
 FILE_DIR = $(SRCDIR)/file_func
 FILE_SRCS = $(addprefix $(FILE_DIR)/, \
-				create_file_name.c \
+				create_filename.c \
 				get_next_line.c \
 				get_next_line_utils.c \
+				ft_close.c \
 )
 #========== free function ======================================================
 FREE_DIR = $(SRCDIR)/free_func
@@ -71,9 +72,7 @@ ISWHAT_SRCS = $(addprefix $(ISWHAT_DIR)/, \
 				ft_isdigit.c \
 				ft_isprint.c \
 				ft_isspace.c \
-				isdouble_quotation.c \
-				issingle_quotation.c \
-				isquotation.c \
+				is_float.c \
 )
 #========== lst function =======================================================
 LST_DIR = $(SRCDIR)/lst_func
@@ -123,6 +122,8 @@ STRING_SRCS = $(addprefix $(STRING_DIR)/, \
 				re_strjoinch.c \
 				re_strdup.c \
 				re_strjoin.c \
+				strcmp_regardless_of_case.c \
+				numjoin_str.c \
 )
 #========== 3Dvecter function ==================================================
 VEC3D_DIR = $(SRCDIR)/vec3d_func
@@ -193,37 +194,37 @@ ECHO	=	"[`expr $C  '*' 100 / $T`%]"
 $(OBJDIR)/%.o : $(ALGORITHM_DIR)/%.c
 	@mkdir -p $(OBJDIR)
 	@$(CC) $(CFLAGS) -c -o $@ $<
-	@printf " %-100b\r" "$(YELLOW)$(ECHO) Compiling  $(RESET)$(UNDER_LINE)"$@"$(RESET)"
+	@printf " %-100b\r" "$(YELLOW)$(ECHO) Compiling $(RESET)$(UNDER_LINE)"$@"$(RESET)"
 $(OBJDIR)/%.o : $(CONVERT_DIR)/%.c
 	@$(CC) $(CFLAGS) -c -o $@ $<
-	@printf " %-100b\r" "$(YELLOW)$(ECHO) Compiling  $(RESET)$(UNDER_LINE)"$@"$(RESET)"
+	@printf " %-100b\r" "$(YELLOW)$(ECHO) Compiling $(RESET)$(UNDER_LINE)"$@"$(RESET)"
 $(OBJDIR)/%.o : $(COUNT_DIR)/%.c
 	@$(CC) $(CFLAGS) -c -o $@ $<
-	@printf " %-100b\r" "$(YELLOW)$(ECHO) Compiling  $(RESET)$(UNDER_LINE)"$@"$(RESET)"
+	@printf " %-100b\r" "$(YELLOW)$(ECHO) Compiling $(RESET)$(UNDER_LINE)"$@"$(RESET)"
 $(OBJDIR)/%.o : $(FILE_DIR)/%.c
 	@$(CC) $(CFLAGS) -c -o $@ $<
-	@printf " %-100b\r" "$(YELLOW)$(ECHO) Compiling  $(RESET)$(UNDER_LINE)"$@"$(RESET)"
+	@printf " %-100b\r" "$(YELLOW)$(ECHO) Compiling $(RESET)$(UNDER_LINE)"$@"$(RESET)"
 $(OBJDIR)/%.o : $(FREE_DIR)/%.c
 	@$(CC) $(CFLAGS) -c -o $@ $<
-	@printf " %-100b\r" "$(YELLOW)$(ECHO) Compiling  $(RESET)$(UNDER_LINE)"$@"$(RESET)"
+	@printf " %-100b\r" "$(YELLOW)$(ECHO) Compiling $(RESET)$(UNDER_LINE)"$@"$(RESET)"
 $(OBJDIR)/%.o : $(ISWHAT_DIR)/%.c
 	@$(CC) $(CFLAGS) -c -o $@ $<
-	@printf " %-100b\r" "$(YELLOW)$(ECHO) Compiling  $(RESET)$(UNDER_LINE)"$@"$(RESET)"
+	@printf " %-100b\r" "$(YELLOW)$(ECHO) Compiling $(RESET)$(UNDER_LINE)"$@"$(RESET)"
 $(OBJDIR)/%.o : $(LST_DIR)/%.c
 	@$(CC) $(CFLAGS) -c -o $@ $<
-	@printf " %-100b\r" "$(YELLOW)$(ECHO) Compiling  $(RESET)$(UNDER_LINE)"$@"$(RESET)"
+	@printf " %-100b\r" "$(YELLOW)$(ECHO) Compiling $(RESET)$(UNDER_LINE)"$@"$(RESET)"
 $(OBJDIR)/%.o : $(MEMORY_DIR)/%.c
 	@$(CC) $(CFLAGS) -c -o $@ $<
-	@printf " %-100b\r" "$(YELLOW)$(ECHO) Compiling  $(RESET)$(UNDER_LINE)"$@"$(RESET)"
+	@printf " %-100b\r" "$(YELLOW)$(ECHO) Compiling $(RESET)$(UNDER_LINE)"$@"$(RESET)"
 $(OBJDIR)/%.o : $(STRING_DIR)/%.c
 	@$(CC) $(CFLAGS) -c -o $@ $<
-	@printf " %-100b\r" "$(YELLOW)$(ECHO) Compiling  $(RESET)$(UNDER_LINE)"$@"$(RESET)"
+	@printf " %-100b\r" "$(YELLOW)$(ECHO) Compiling $(RESET)$(UNDER_LINE)"$@"$(RESET)"
 $(OBJDIR)/%.o : $(VEC3D_DIR)/%.c
 	@$(CC) $(CFLAGS) -c -o $@ $<
-	@printf " %-100b\r" "$(YELLOW)$(ECHO) Compiling  $(RESET)$(UNDER_LINE)"$@"$(RESET)"
+	@printf " %-100b\r" "$(YELLOW)$(ECHO) Compiling $(RESET)$(UNDER_LINE)"$@"$(RESET)"
 $(OBJDIR)/%.o : $(WRITE_DIR)/%.c
 	@$(CC) $(CFLAGS) -c -o $@ $<
-	@printf " %-100b\r" "$(YELLOW)$(ECHO) Compiling  $(RESET)$(UNDER_LINE)"$@"$(RESET)"
+	@printf " %-100b\r" "$(YELLOW)$(ECHO) Compiling $(RESET)$(UNDER_LINE)"$@"$(RESET)"
 
 
 # ========== Main Make =========================================================

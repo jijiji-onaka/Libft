@@ -1,18 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   isdouble_quotation.c                               :+:      :+:    :+:   */
+/*   ft_close.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/15 03:10:11 by tjinichi          #+#    #+#             */
-/*   Updated: 2020/12/15 03:13:31 by tjinichi         ###   ########.fr       */
+/*   Created: 2021/01/21 02:09:35 by tjinichi          #+#    #+#             */
+/*   Updated: 2021/01/21 02:10:20 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/iswhat_func.h"
+#include "../../includes/file_func.h"
 
-bool	isdouble_quotation(int c)
+bool	ft_close(int *fd)
 {
-	return (c == '\"');
+	if (close(*fd) == -1)
+		return (false);
+	*fd = -1;
+	return (true);
 }

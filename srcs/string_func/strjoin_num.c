@@ -6,7 +6,7 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/26 04:02:54 by tjinichi          #+#    #+#             */
-/*   Updated: 2020/12/12 02:23:03 by tjinichi         ###   ########.fr       */
+/*   Updated: 2021/01/18 02:43:52 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,22 +26,21 @@ char			*strjoin_num(char *s, long long num)
 
 	num_len = ft_numlen(num);
 	s_len = ft_strlen(s);
-	if (!(res = malloc(sizeof(char) * (s_len + num_len + 3))))
+	if (!(res = malloc(sizeof(char) * (s_len + num_len + 1))))
 		return (NULL);
-	res[s_len + num_len + 2] = '\0';
-	res[s_len + num_len + 1] = ']';
-	while (num != 0)
-	{
-		res[s_len + num_len] = num % 10 + '0';
-		num /= 10;
-		num_len--;
-	}
-	res[s_len + num_len] = '[';
 	i = 0;
 	while (s[i])
 	{
 		res[i] = s[i];
 		i++;
 	}
+	while (num_len)
+	{
+		res[s_len + num_len - 1] = num % 10 + '0';
+		num /= 10;
+		num_len--;
+		i++;
+	}
+	res[i] = '\0';
 	return (res);
 }

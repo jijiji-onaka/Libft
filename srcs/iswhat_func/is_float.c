@@ -1,18 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   issingle_quotation.c                               :+:      :+:    :+:   */
+/*   is_float.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/15 03:13:39 by tjinichi          #+#    #+#             */
-/*   Updated: 2020/12/15 03:13:50 by tjinichi         ###   ########.fr       */
+/*   Created: 2021/01/22 02:15:05 by tjinichi          #+#    #+#             */
+/*   Updated: 2021/01/22 02:15:39 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/iswhat_func.h"
 
-bool	issingle_quotation(int c)
+bool		is_float(char *s)
 {
-	return (c == '\'');
+	if (*s == '-')
+		s++;
+	while (ft_isdigit(*s))
+		s++;
+	if (*s == '.')
+	{
+		s++;
+		while (ft_isdigit(*s))
+			s++;
+	}
+	if (*s)
+		return (false);
+	return (true);
 }

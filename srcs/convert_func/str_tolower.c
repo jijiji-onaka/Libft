@@ -6,7 +6,7 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/17 05:58:27 by tjinichi          #+#    #+#             */
-/*   Updated: 2020/12/30 05:15:30 by tjinichi         ###   ########.fr       */
+/*   Updated: 2020/12/31 17:11:53 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,11 @@
 void	str_tolower(char **s)
 {
 	char	*tmp;
-	size_t	i;
 
-	i = 0;
 	tmp = *s;
-	while (tmp[i])
+	while (*tmp)
 	{
-		tmp[i] = ft_tolower(tmp[i]);
-		i++;
+		*tmp = ft_tolower(*tmp);
+		tmp++;
 	}
 }

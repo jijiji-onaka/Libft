@@ -1,18 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   isquotation.c                                      :+:      :+:    :+:   */
+/*   strcmp_regardless_of_case.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/15 03:14:10 by tjinichi          #+#    #+#             */
-/*   Updated: 2020/12/15 03:14:28 by tjinichi         ###   ########.fr       */
+/*   Created: 2021/01/20 04:49:40 by tjinichi          #+#    #+#             */
+/*   Updated: 2021/01/20 04:49:56 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/iswhat_func.h"
+#include "../../includes/string_func.h"
 
-bool		isquotation(int c)
+int	strcmp_regardless_of_case(char *p1, char *p2)
 {
-	return (isdouble_quotation(c) || issingle_quotation(c));
+	unsigned char	*s1;
+	unsigned char	*s2;
+
+	if (!p1 || !p2)
+		return (INT_MIN);
+	s1 = (unsigned char *)p1;
+	s2 = (unsigned char *)p2;
+	while (*s1 && ft_tolower(*s1) == ft_tolower(*s2))
+	{
+		s1++;
+		s2++;
+	}
+	return (ft_tolower(*s1) - ft_tolower(*s2));
 }

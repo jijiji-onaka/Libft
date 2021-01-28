@@ -6,7 +6,7 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/30 23:34:18 by tjinichi          #+#    #+#             */
-/*   Updated: 2020/12/30 20:07:03 by tjinichi         ###   ########.fr       */
+/*   Updated: 2021/01/27 19:47:55 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ static int	merge(char **array, t_index info, char **work, int (*cmp_by)())
 	return (EXIT_SUCCESS);
 }
 
-int			marge_strsort(char **array, size_t begin, \
+int			merge_strsort(char **array, size_t begin, \
 				size_t end, int (*cmp_by)())
 {
 	char		**work;

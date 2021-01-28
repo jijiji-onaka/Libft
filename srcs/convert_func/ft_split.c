@@ -6,7 +6,7 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/23 11:43:10 by tjinichi          #+#    #+#             */
-/*   Updated: 2020/12/17 22:10:01 by tjinichi         ###   ########.fr       */
+/*   Updated: 2021/01/04 03:18:40 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,13 @@ char			**ft_split(char const *s, char c)
 	if (!s)
 		return (NULL);
 	wc = word_count(s, c);
+	if (wc == 0)
+	{
+		if (!(res = malloc(sizeof(char *) * 1)))
+			return (NULL);
+		res[0] = NULL;
+		return (res);
+	}
 	if (!(res = malloc(sizeof(char *) * (wc + 1))))
 		return (NULL);
 	res = insert_word(s, c, wc, res);
