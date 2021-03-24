@@ -6,7 +6,7 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/30 23:34:18 by tjinichi          #+#    #+#             */
-/*   Updated: 2021/01/27 19:47:55 by tjinichi         ###   ########.fr       */
+/*   Updated: 2021/03/24 15:14:58 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,11 @@
 ** the index number.
 */
 
-static int	merge(char **array, t_index info, char **work, int (*cmp_by)())
+static int			merge(char **array,
+						t_index info, char **work, int (*cmp_by)())
 {
-	size_t	i;
-	size_t	j;
+	u_int64_t	i;
+	u_int64_t	j;
 	int		rc;
 
 	if (info.begin >= info.end)
@@ -47,16 +48,23 @@ static int	merge(char **array, t_index info, char **work, int (*cmp_by)())
 	return (EXIT_SUCCESS);
 }
 
-int			merge_strsort(char **array, size_t begin, \
-				size_t end, int (*cmp_by)())
+static u_int64_t	u_int64_min(u_int64_t num1, u_int64_t num2)
+{
+	if (num1 < num2)
+		return (num1);
+	return (num2);
+}
+
+bool				merge_strsort(char **array, u_int64_t begin, \
+							u_int64_t end, int (*cmp_by)())
 {
 	char		**work;
-	size_t		i;
-	size_t		j;
+	u_int64_t	i;
+	u_int64_t	j;
 	t_index		info;
 
 	if (!(work = malloc(sizeof(char *) * (end - begin + 1))))
-		return (1);
+		return (false);
 	i = 1;
 	while (i <= end - begin)
 	{
@@ -64,13 +72,14 @@ int			merge_strsort(char **array, size_t begin, \
 		while (j <= end - i)
 		{
 			info.begin = j;
-			info.end = MIN(j + i * 2 - 1, end);
+			info.end = u_int64_min(j + i * 2 - 1, end);
 			info.mid = j + i - 1;
-			merge(array, info, work, cmp_by);
+			if (merge(array, info, work, cmp_by) == false)
+				return (ptr_2d_free((void***)&work, 0));
 			j += i * 2;
 		}
 		i *= 2;
 	}
-	free(work);
-	return (0);
+	ptr_2d_free((void***)&work, 0);
+	return (true);
 }

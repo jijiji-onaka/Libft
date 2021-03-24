@@ -6,14 +6,15 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/11 21:05:51 by tjinichi          #+#    #+#             */
-/*   Updated: 2020/12/11 21:29:50 by tjinichi         ###   ########.fr       */
+/*   Updated: 2021/03/24 15:25:15 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/free_func.h"
 
-void	ptr_free(void **ptr)
+void	*ptr_free(void **ptr)
 {
 	free(*ptr);
 	*ptr = NULL;
+	return (NULL);
 }

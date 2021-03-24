@@ -6,7 +6,7 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/10 20:46:35 by tjinichi          #+#    #+#             */
-/*   Updated: 2021/01/22 02:15:28 by tjinichi         ###   ########.fr       */
+/*   Updated: 2021/03/24 15:03:32 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,6 @@ bool		ft_isdigit(int c);
 bool		ft_isprint(int c);
 bool		ft_isspace(int c);
 bool		is_float(char *s);
+bool		ft_iswhitespace(int c);
 
 #endif

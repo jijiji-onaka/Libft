@@ -6,7 +6,7 @@
 #    By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/06/23 20:15:31 by tjinichi          #+#    #+#              #
-#    Updated: 2021/01/24 23:55:33 by tjinichi         ###   ########.fr        #
+#    Updated: 2021/03/24 15:22:50 by tjinichi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,6 +31,7 @@ ALGORITHM_SRCS = $(addprefix $(ALGORITHM_DIR)/, \
 CONVERT_DIR = $(SRCDIR)/convert_func
 CONVERT_SRCS = $(addprefix $(CONVERT_DIR)/, \
 				ft_atoi.c \
+				ft_atol.c \
 				ft_itoa.c \
 				ft_tolower.c \
 				ft_toupper.c \
@@ -122,6 +123,7 @@ STRING_SRCS = $(addprefix $(STRING_DIR)/, \
 				re_strjoinch.c \
 				re_strdup.c \
 				re_strjoin.c \
+				re_strtrim.c \
 				strcmp_regardless_of_case.c \
 				numjoin_str.c \
 )
