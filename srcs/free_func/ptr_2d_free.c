@@ -6,13 +6,13 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/16 17:51:36 by tjinichi          #+#    #+#             */
-/*   Updated: 2020/12/17 22:44:51 by tjinichi         ###   ########.fr       */
+/*   Updated: 2021/05/12 17:23:34 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/free_func.h"
 
-void		*ptr_2d_free(void ***ptr, size_t cur)
+void	*ptr_2d_free(void ***ptr, size_t cur)
 {
 	size_t		i;
 

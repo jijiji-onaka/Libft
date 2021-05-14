@@ -1,37 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   where_error.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/06/22 17:59:49 by tjinichi          #+#    #+#             */
-/*   Updated: 2021/04/09 02:46:26 by tjinichi         ###   ########.fr       */
+/*   Created: 2021/04/04 02:12:45 by tjinichi          #+#    #+#             */
+/*   Updated: 2021/04/09 02:57:43 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/memory_func.h"
+#include "../../includes/write_func.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+t_err	where_err(int line, char *file)
 {
-	unsigned char	*dst_p;
-	unsigned char	*src_p;
+	t_err	err;
 
-	if (!dst && !src)
-		return (NULL);
-	dst_p = (unsigned char *)dst;
-	src_p = (unsigned char *)src;
-	if (src_p < dst_p)
-	{
-		while (len > 0)
-		{
-			dst_p[len - 1] = src_p[len - 1];
-			len--;
-		}
-	}
-	else
-	{
-		ft_memcpy(dst_p, src_p, len);
-	}
-	return (dst);
+	err.line = line;
+	err.file = file;
+	return (err);
 }

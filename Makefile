@@ -6,7 +6,7 @@
 #    By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/06/23 20:15:31 by tjinichi          #+#    #+#              #
-#    Updated: 2021/05/15 05:01:18 by tjinichi         ###   ########.fr        #
+#    Updated: 2021/04/09 02:58:27 by tjinichi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,8 +14,7 @@ NAME = libft.a
 
 # =========== compile option ===================================================
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror
-
+CFLAGS = -g -Wall -Wextra -Werror # -fsanitize=address
 RM = rm
 # =========== path =============================================================
 INCLUDES = $(wildcard ./includes/*.h)
@@ -25,7 +24,7 @@ OBJDIR = $(SRCDIR)/objs
 ALGORITHM_DIR = $(SRCDIR)/algorithm_func
 ALGORITHM_SRCS = $(addprefix $(ALGORITHM_DIR)/, \
 				ft_swap.c \
-				marge_strsort.c \
+				merge_strsort.c \
 				str_bsearch.c \
 )
 # ========= convert function ===================================================
@@ -36,13 +35,13 @@ CONVERT_SRCS = $(addprefix $(CONVERT_DIR)/, \
 				ft_itoa.c \
 				ft_tolower.c \
 				ft_toupper.c \
-				ft_stod.c \
-				ft_stoi.c \
-				ft_stov.c \
 				skip_space.c \
 				str_tolower.c \
 				ft_split.c \
 				split_by_chrs.c \
+				signed_max_min.c \
+				unsigned_max_min.c \
+				ft_abs.c \
 )
 #========== count function =====================================================
 COUNT_DIR = $(SRCDIR)/count_func
@@ -74,6 +73,7 @@ ISWHAT_SRCS = $(addprefix $(ISWHAT_DIR)/, \
 				ft_isdigit.c \
 				ft_isprint.c \
 				ft_isspace.c \
+				ft_iswhitespace.c \
 				is_float.c \
 )
 #========== lst function =======================================================
@@ -122,9 +122,10 @@ STRING_SRCS = $(addprefix $(STRING_DIR)/, \
 				strjoin_num.c \
 				strtail_number.c \
 				re_strjoinch.c \
+				re_strtrim.c \
 				re_strdup.c \
 				re_strjoin.c \
-				re_strtrim.c \
+				re_str3join.c \
 				strcmp_regardless_of_case.c \
 				numjoin_str.c \
 )
@@ -153,6 +154,8 @@ WRITE_SRCS = $(addprefix $(WRITE_DIR)/, \
 				ft_putendl_fd.c \
 				red_error.c \
 				yellow_warning.c \
+				where_error.c \
+				libft_error.c \
 )
 #========== Srcs and Objs ======================================================
 SRCS = \
@@ -188,8 +191,8 @@ UNDER_LINE	= \033[0;4m
 
 T		=	$(words ${OBJS})
 N		=	0
-# words = 文字列の個数を数えます
-# eval = 文字列を評価します
+# words = words count
+# eval = evaluate words
 C		=	$(words $N)${eval N += 1}
 ECHO	=	"[`expr $C  '*' 100 / $T`%]"
 
@@ -240,10 +243,14 @@ all:	$(NAME)
 clean:
 	@make clean -C ./srcs/vec3d_func
 	@$(RM) -rf $(OBJDIR)
+	@printf "\r$(RED)$(BOLD)[Libft] \nremoved libft's object file and objs directory$(RESET)\n"
 
-fclean: clean
+fclean:
 	@make fclean -C ./srcs/vec3d_func
+	@$(RM) -rf $(OBJDIR)
+	@printf "\r$(RED)$(BOLD)[Libft] \nremoved object file and objs directory\n"
 	@$(RM) -f $(NAME)
+	@printf "\rremoved libft.a$(RESET)\n\n"
 
 re:	fclean all
 
