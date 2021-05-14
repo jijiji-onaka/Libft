@@ -6,7 +6,7 @@
 #    By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/06/23 20:15:31 by tjinichi          #+#    #+#              #
-#    Updated: 2021/03/24 15:22:50 by tjinichi         ###   ########.fr        #
+#    Updated: 2021/05/15 05:01:18 by tjinichi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,6 +15,7 @@ NAME = libft.a
 # =========== compile option ===================================================
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
+
 RM = rm
 # =========== path =============================================================
 INCLUDES = $(wildcard ./includes/*.h)
